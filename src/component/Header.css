@@ -5,7 +5,9 @@
 .row {
     height : 150px;
 }
-h1 {
+.h1 {
     text-align: center;
-    font-size: 80px;
+    font-size: 90px;
+    position: relative;
+    top : 40px;
 }

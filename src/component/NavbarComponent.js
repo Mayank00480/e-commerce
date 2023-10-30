@@ -18,9 +18,9 @@ export default function NavbarComponent(props) {
   return (
     <Navbar bg="dark" data-bs-theme="dark">
     <Container>
-      <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+      <Navbar.Brand ><NavLink to="/" style = {{textDecoration : 'none',color:'white'}}>NavBar</NavLink></Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link href="#home">Home</Nav.Link>
+      <Nav.Link> <NavLink to="/Home" style = {{textDecoration : 'none',color:'white'}}>Home</NavLink></Nav.Link>
        <Nav.Link> <NavLink to="/About" style = {{textDecoration : 'none',color:'white'}}>About</NavLink></Nav.Link>
         <Nav.Link href="#pricing">Pricing</Nav.Link>
       </Nav> 

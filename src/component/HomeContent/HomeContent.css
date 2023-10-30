@@ -1,0 +1,21 @@
+.listItems{
+    text-align: center;
+   
+}
+.listItems h1{
+    margin-bottom: 40px;
+}
+.listItems li {
+    list-style-type: none;
+    margin-top: 10px;
+}
+.listItems button{
+    background-color: skyblue;
+    color : white;
+    border : none
+}
+.listItems hr {
+    width : 600px;
+    position: relative;
+    left : 450px;
+}
