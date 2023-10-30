@@ -1,0 +1,8 @@
+.cart{
+    position: relative;
+    left : 900px;
+    bottom: 615px;
+    z-index: 10;
+    background-color: white;
+    height: 700px;
+}

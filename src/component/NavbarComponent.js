@@ -2,7 +2,10 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-export default function NavbarComponent() {
+export default function NavbarComponent(props) {
+  const showCartItemsHandler = () =>{
+    props.showCartItems();
+  }
   return (
     <Navbar bg="dark" data-bs-theme="dark">
     <Container>
@@ -11,7 +14,8 @@ export default function NavbarComponent() {
         <Nav.Link href="#home">Home</Nav.Link>
         <Nav.Link href="#features">Features</Nav.Link>
         <Nav.Link href="#pricing">Pricing</Nav.Link>
-      </Nav>
+      </Nav> 
+      <button onClick = {showCartItemsHandler}>Cart</button>
     </Container>
   </Navbar>
   )
