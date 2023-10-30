@@ -17,7 +17,7 @@ const AddedItems = (props) => {
         </tr>
        {cntxt.items.map((elem) =>{
         return (
-       elem.quantity > 0 &&  <tr >
+      elem != undefined && elem.quantity > 0 &&  <tr >
             <td style = {{width : '220px',paddingLeft : '30px',display : 'flex' ,justifyContent : 'space-between'}}><img src = {elem.imageUrl} height = "80px" width = "80px" /> {elem.title}</td>
             <td style = {{width : '100px',paddingLeft : '30px'}}>{elem.price}</td>
             <td style = {{width : '200px',paddingLeft : '30px'}}>{elem.quantity} <button onClick = {() =>{cntxt.reduceQuantity(elem.title)}} style = {{marginLeft : '10px',padding : '1px 7px',border : '1px solid black', borderRadius : '5px'}}>-</button></td><hr/>
