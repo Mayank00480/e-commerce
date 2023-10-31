@@ -1,0 +1,27 @@
+form{
+    text-align: center;
+   margin-top: 50px;
+
+}
+button,input{
+     border-radius: 5px;
+         
+}
+label{
+    float: left;
+}
+button[type = "submit"]{
+    background-color: blueviolet;
+    color : white;
+}
+input{
+    width : 98%;
+    padding : 5px;
+    font-size: 12px;
+}
+
+.userForm{
+    position: relative;
+    left : 600px;
+    width : 300px;
+}
