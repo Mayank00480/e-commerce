@@ -1,4 +1,5 @@
 import React ,{useContext}from 'react'
+import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import CreateContext from '../store/CreateContext';
@@ -9,7 +10,7 @@ const CardItems = (props) => {
   return  (<Card  className='col-4' style = {{margin : '10px 20px'}} >
     <Card.Img variant="top" src={items.imageUrl} />
     <Card.Body>
-      <Card.Title style = {{textAlign:'center'}}>{items.title}</Card.Title>
+      <Card.Title style = {{textAlign:'center'}}><Link to = {"/products/"+items.id} style = {{textDecoration : 'none'}}>{items.title}</Link></Card.Title>
       <h2 style = {{float : 'left'}}> {items.price}</h2>
       <Button variant="primary" onClick = {() =>{ cntxt.addItem({
         title : items.title,
