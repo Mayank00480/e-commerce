@@ -9,6 +9,7 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import Home from './Home';
 import Contact from './Contact';
 import ProductsDetail from './component/ProductsDetail';
+import AuthForm from './component/Auth/AuthForm';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,6 +20,7 @@ root.render(
     <Route exact path = "/Home" Component={Home}/>
     <Route exact path = "/Contact" Component={Contact}/>
     <Route exact path = "/products/:productId" Component = {ProductsDetail} />
+    <Route exact path = "/auth" Component={AuthForm}/>
     </Routes>
 </Router>  
 );

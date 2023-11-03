@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import CreateContext from './CreateContext'
 const ContextProvider = (props) => {
+  const [token ,setToken] = useState(null);
  const [cartElements , setCartElements] = useState([]);
     const reduceQuantityHandler = (itemName) =>{
         setCartElements(cartElements.map((val,index) =>{
@@ -35,8 +36,16 @@ const ContextProvider = (props) => {
         } )
        }
     }
-    
+    const addToken = (tkn) =>{
+      setToken(tkn);
+    }
+    const removeToken = () =>{
+      setToken(null);
+    }
     const context = {
+        token : token,
+        addToken : addToken,
+        removeToken : removeToken,
         items : cartElements,
         reduceQuantity : reduceQuantityHandler,
         addItem : addItemHandler

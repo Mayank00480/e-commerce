@@ -22,6 +22,7 @@ export default function NavbarComponent(props) {
       <Nav className="me-auto">
       <Nav.Link> <NavLink to="/Home" style = {{textDecoration : 'none',color:'white'}}>Home</NavLink></Nav.Link>
        <Nav.Link> <NavLink to="/About" style = {{textDecoration : 'none',color:'white'}}>About</NavLink></Nav.Link>
+       <Nav.Link> <NavLink to="/auth" style = {{textDecoration : 'none',color:'white'}}>Login</NavLink></Nav.Link>
        <Nav.Link> <NavLink to="/Contact" style = {{textDecoration : 'none',color:'white'}}>Contact</NavLink></Nav.Link>
       </Nav> 
       <button onClick = {showCartItemsHandler}>Cart {qty}</button>
