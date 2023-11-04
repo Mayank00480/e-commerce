@@ -1,18 +1,37 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import CreateContext from './store/CreateContext';
 import { Link,NavLink,useNavigate } from 'react-router-dom';
 export default function NavbarComponent(props) {
+  const [qty ,setQty] =  useState(0);
   const navigate = useNavigate();
   const cntxt = useContext(CreateContext)
-  let qty = 0 ;
-  cntxt.items.forEach((value) =>{
+  let updatedStr = localStorage.getItem("EcommEmail");
+  
+  useEffect(() =>{
+    
+                  
+                 
+                  localStorage.getItem("EcommEmail") &&
+                    fetch(
+                      `https://crudcrud.com/api/4663ea2f60274a2c9d56d10bc45db1f1/${updatedStr}`)
+                      .then((res) => res.json())
+                      .then((data) => {
+                        console.log(data.length)
+                        setQty(data.length);
+                      })
+                      
+
+  } ,[])
+ 
+
+ /* cntxt.items.forEach((value) =>{
       if(value.quantity > 0){
         qty++;
       }
-  })
+  })*/
   const showCartItemsHandler = () =>{
     props.showCartItems();
   }
@@ -29,9 +48,9 @@ export default function NavbarComponent(props) {
       {localStorage.getItem("ecommToken") &&<button onClick = {showCartItemsHandler}>Cart {qty}</button>}
      { localStorage.getItem("ecommToken") && <button onClick = {() =>{
       
-        console.log(cntxt.removeToken)
+        
         cntxt.removeToken();
-        console.log(cntxt);
+       
         navigate('/auth')        
       }}>Logout</button> }
     </Container>

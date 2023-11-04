@@ -33,10 +33,12 @@ const AuthForm = () => {
             if(res.ok){
                console.log('success');
                res.json().then((data) =>{
-                console.log(data.idToken)
-               
+                    emailInput.current.value = emailInput.current.value.replace('@' , "");
+                    emailInput.current.value = emailInput.current.value.replace('.' , "");
+               localStorage.setItem("EcommEmail" , emailInput.current.value);
                context.addToken(data.idToken)
                navigate('/')
+             
                })
               
             }

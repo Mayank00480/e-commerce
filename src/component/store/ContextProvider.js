@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import CreateContext from './CreateContext'
 const ContextProvider = (props) => {
   const [token ,setToken] = useState(null);
+  const [emailId , setEmailId] = useState(undefined);
  const [cartElements , setCartElements] = useState([]);
     const reduceQuantityHandler = (itemName) =>{
         setCartElements(cartElements.map((val,index) =>{
@@ -45,6 +46,7 @@ const ContextProvider = (props) => {
         return null;
       });
       localStorage.removeItem("ecommToken");
+      localStorage.removeItem("EcommEmail")
     }
     const context = {
         token : token,
@@ -52,7 +54,8 @@ const ContextProvider = (props) => {
         removeToken : removeToken,
         items : cartElements,
         reduceQuantity : reduceQuantityHandler,
-        addItem : addItemHandler
+        addItem : addItemHandler,
+       
     }
   return (
     <CreateContext.Provider value = {context}>
