@@ -38,9 +38,13 @@ const ContextProvider = (props) => {
     }
     const addToken = (tkn) =>{
       setToken(tkn);
+      localStorage.setItem("ecommToken" , tkn);
     }
     const removeToken = () =>{
-      setToken(null);
+      setToken(prevState =>{
+        return null;
+      });
+      localStorage.removeItem("ecommToken");
     }
     const context = {
         token : token,

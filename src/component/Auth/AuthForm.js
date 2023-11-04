@@ -34,10 +34,11 @@ const AuthForm = () => {
                console.log('success');
                res.json().then((data) =>{
                 console.log(data.idToken)
-                localStorage.setItem("ecommToken" , data.idToken);
+               
                context.addToken(data.idToken)
-               })
                navigate('/')
+               })
+              
             }
             else{
               res.json().then((data) =>{

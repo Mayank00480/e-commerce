@@ -10,19 +10,16 @@ import Home from './Home';
 import Contact from './Contact';
 import ProductsDetail from './component/ProductsDetail';
 import AuthForm from './component/Auth/AuthForm';
+import ContextProvider from './component/store/ContextProvider';
+import NewIndex from './NewIndex';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
- <Router>
-    <Routes>
-    <Route exact path = "/" Component={App} />
-    <Route exact path = "/About" Component={About} />
-    <Route exact path = "/Home" Component={Home}/>
-    <Route exact path = "/Contact" Component={Contact}/>
-    <Route exact path = "/products/:productId" Component = {ProductsDetail} />
-    <Route exact path = "/auth" Component={AuthForm}/>
-    </Routes>
-</Router>  
+    <Router>
+    <ContextProvider >
+ <NewIndex /> 
+ </ContextProvider>
+ </Router>
 );
 
 

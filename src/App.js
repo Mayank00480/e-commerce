@@ -5,6 +5,7 @@ import React,{useState} from "react";
 import './App.css'
 import AddedItems from "./component/Addeditems/AddedItems";
 import ContextProvider from "./component/store/ContextProvider";
+import NewIndex from "./NewIndex";
 const productsArr = [
   {
     id : 'p1',
@@ -36,11 +37,13 @@ const productsArr = [
       
 function App() {
   const [showCart , setShowCart] = useState(false);
+  console.log('apppjs')
   const showCartItems = () =>{
       setShowCart((prevState) => !prevState )    
   }
   return (
     <ContextProvider >
+     
 <NavbarComponent showCartItems = {showCartItems}/>
 <Header/>
 <div className="cartItems">
